@@ -33,6 +33,27 @@ Or run all configured servers
 python mcp_pipe.py
 ```
 
+### Windows Quick Start
+
+Chạy dự án trên Windows bằng cách sử dụng file batch `run_mcp.bat` vừa được bổ sung:
+
+1. Cài đặt Python và đảm bảo đã thêm vào `PATH`.
+2. Cài đặt các thư viện cần thiết:
+   ```bat
+   pip install -r requirements.txt
+   ```
+3. Thiết lập biến môi trường `MCP_ENDPOINT` (có thể tạo file `.env` với nội dung `export MCP_ENDPOINT=<endpoint>` giống như trên Linux).
+4. Chạy server MCP (có thể mở Command Prompt tại bất cứ thư mục nào hoặc double-click vào file `run_mcp.bat`):
+   ```bat
+   run_mcp.bat
+   ```
+   Có thể truyền thêm tham số nếu muốn chạy riêng lẻ, ví dụ:
+   ```bat
+   run_mcp.bat calculator.py
+   ```
+
+Batch script sẽ tự động di chuyển vào thư mục chứa dự án, đọc biến môi trường từ `.env` (nếu có), tự dò Python (`python`, `python3`, hoặc `py`) và thông báo lỗi khi chưa cấu hình `MCP_ENDPOINT` hoặc chưa cài Python.
+
 *Requires `mcp_config.json` configuration file with server definitions (supports stdio/sse/http transport types)*
 
 ## Contributing 
