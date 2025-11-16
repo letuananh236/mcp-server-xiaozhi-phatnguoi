@@ -43,7 +43,7 @@ Chạy dự án trên Windows bằng cách sử dụng file batch `run_mcp.bat` 
    pip install -r requirements.txt
    ```
 3. Thiết lập biến môi trường `MCP_ENDPOINT` (có thể tạo file `.env` với nội dung `export MCP_ENDPOINT=<endpoint>` giống như trên Linux).
-4. Chạy server MCP:
+4. Chạy server MCP (có thể mở Command Prompt tại bất cứ thư mục nào hoặc double-click vào file `run_mcp.bat`):
    ```bat
    run_mcp.bat
    ```
@@ -52,7 +52,7 @@ Chạy dự án trên Windows bằng cách sử dụng file batch `run_mcp.bat` 
    run_mcp.bat calculator.py
    ```
 
-Batch script sẽ tự động đọc biến môi trường từ `.env` (nếu có) và thông báo lỗi khi chưa cấu hình `MCP_ENDPOINT` hoặc chưa cài Python.
+Batch script sẽ tự động di chuyển vào thư mục chứa dự án, đọc biến môi trường từ `.env` (nếu có), tự dò Python (`python`, `python3`, hoặc `py`) và thông báo lỗi khi chưa cấu hình `MCP_ENDPOINT` hoặc chưa cài Python.
 
 *Requires `mcp_config.json` configuration file with server definitions (supports stdio/sse/http transport types)*
 
